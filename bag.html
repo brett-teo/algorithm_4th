@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 背包典型用例
+      class Bag {
+        constructor() {
+          this.num = 0
+          this.bag = []
+        }
+        Bag() {
+          this.bag = []
+        }
+        size() {
+          return this.bag.length
+        }
+        isEmpty() {
+          return this.num === 0
+        }
+        add(item) {
+          this.bag[this.num++] = item
+          console.log('item', item)
+        }
+      }
+
+      const numbers = new Bag()
+      const run = () => {
+        let input = prompt('input a number')
+        while (input) {
+          numbers.add(+input)
+          input = prompt('input a number')
+        }
+        const size = numbers.size()
+        let sum = 0
+        for (let i = size - 1; i >= 0; i--) {
+          console.log(numbers.bag[i])
+          sum += numbers.bag[i]
+        }
+        const mean = sum / size
+        sum = 0
+        for (let i = size - 1; i >= 0; i--) {
+          sum += (numbers.bag[i] - mean) * (numbers.bag[i] + mean)
+        }
+        const std = Math.sqrt(sum / (size - 1))
+        console.log('std, mean', std, mean)
+      }
+      run()
+    </script>
+  </body>
+</html>

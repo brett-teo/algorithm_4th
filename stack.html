@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class Stack {
+        constructor() {
+          this.stack = []
+          this.size = 0
+        }
+        initStack() {
+          this.stack = []
+        }
+        isEmpty() {
+          return this.size === 0
+        }
+        getSize() {
+          return this.size
+        }
+        push(item) {
+          this.stack[this.size++] = item
+        }
+        pop() {
+          if (!this.isEmpty()) {
+            const popItem = this.stack[this.size - 1]
+            this.stack.length = --this.size
+            return popItem
+          }
+        }
+      }
+
+      const stack = new Stack()
+      const run = () => {
+        let input = prompt('input a number')
+        while (input) {
+          stack.push(input)
+          input = prompt('input a number')
+        }
+        const size = stack.getSize()
+        console.log('size', size)
+        let a = []
+        console.log('stack', stack)
+        for (let i = 0; i < size; i++) {
+          a[i] = stack.pop()
+          console.log('a[i]', a[i])
+        }
+      }
+      run()
+    </script>
+  </body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class Queue {
+        constructor() {
+          this.num = 0
+          this.queue = []
+        }
+        initQueue() {
+          this.queue = []
+          this.num = 0
+        }
+        isEmpty() {
+          return this.num === 0
+        }
+        size() {
+          return this.num
+        }
+        enqueue(item) {
+          this.queue[this.num++] = item
+        }
+        dequeue() {
+          if (!this.isEmpty()) {
+            let dequeueItem = this.queue[0]
+            for (let i = 0; i < this.num - 1; i++) {
+              this.queue[i] = this.queue[i + 1]
+            }
+            this.size--
+            return dequeueItem
+          }
+        }
+      }
+
+      const queue = new Queue()
+      const run = () => {
+        let input = prompt('input a number')
+        while (input) {
+          queue.enqueue(input)
+          input = prompt('input a number')
+        }
+        const size = queue.size()
+        console.log('size', size)
+        let a = []
+        for (let i = 0; i < size; i++) {
+          a[i] = queue.dequeue()
+          console.log('a[i]', a[i])
+        }
+      }
+      run()
+    </script>
+  </body>
+</html>
