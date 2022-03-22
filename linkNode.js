@@ -40,8 +40,10 @@ for (let node = first; node !== null; node = node.next) {
 }
 d
 
-let x = first
+let x = first // for 的第一个赋值条件
 while (x) {
+  // for 的第二个相反的判断条件
   console.log('while', x.item)
-  x = x.next
+
+  x = x.next // 更新条件
 }
