@@ -34,3 +34,7 @@ last.item = 'to'
 oldLast.next = last
 console.log(first)
 console.log(second)
+
+for (let node = first; node !== null; node = node.next) {
+  console.log('item', node.item)
+}
