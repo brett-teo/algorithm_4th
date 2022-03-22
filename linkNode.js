@@ -32,9 +32,16 @@ let oldLast = last
 last = new Node()
 last.item = 'to'
 oldLast.next = last
-console.log(first)
-console.log(second)
+// console.log(first)
+// console.log(second)
 
 for (let node = first; node !== null; node = node.next) {
   console.log('item', node.item)
+}
+d
+
+let x = first
+while (x) {
+  console.log('while', x.item)
+  x = x.next
 }
