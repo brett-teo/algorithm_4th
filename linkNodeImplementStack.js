@@ -63,7 +63,7 @@ for (let i = 0; i < testArr.length; i++) {
   let str = testArr[i]
   if (str !== '-') {
     stack.push(str)
-  } else {
+  } else if (!stack.isEmpty()) {
     console.log('pop', stack.pop())
   }
 }
