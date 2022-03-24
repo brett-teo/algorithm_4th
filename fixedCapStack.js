@@ -26,6 +26,9 @@ class FixedCapStackOfStrings {
       this.resize(this.maxSize / 2)
     return popItem
   }
+  isFull() {
+    return this.num === this.maxSize
+  }
   isEmpty() {
     return this.num === 0
   }
@@ -42,20 +45,20 @@ class FixedCapStackOfStrings {
 // TEST
 
 const testArr = [
-  'to',
-  'be',
-  'or',
-  'not',
-  'to',
-  '-',
-  'be',
-  '-',
-  '-',
-  'that',
-  '-',
-  '-',
-  '-',
-  'is'
+  'to'
+  // 'be',
+  // 'or',
+  // 'not',
+  // 'to',
+  // '-',
+  // 'be',
+  // '-',
+  // '-',
+  // 'that',
+  // '-',
+  // '-',
+  // '-',
+  // 'is'
 ]
 const run = () => {
   const s = new FixedCapStackOfStrings(1)
@@ -69,6 +72,7 @@ const run = () => {
     }
   }
   console.log('s', s)
+  console.log('isFull', s.isFull())
   console.log(`(${s.size()} left on stack)`)
 }
 
