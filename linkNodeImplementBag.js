@@ -7,6 +7,7 @@ class Bag {
   first = null
   size = 0
   current = null
+  isFirst = true // 不用这个 isFirst 行不行
   add(item) {
     const oldFirst = this.first
     this.first = new Node()
@@ -30,14 +31,20 @@ class Bag {
   }
 
   next() {
-    if (!this.current) {
+    if (!this.current && this.isFirst) {
+      this.isFirst = false
       this.current = this.first
     }
-    const item = this.current.item
-    const hasNext = this.hasNext()
+    const item = this.current?.item
+    if (!item) {
+      return {
+        done: true,
+        value: undefined
+      }
+    }
     this.current = this.current.next
     return {
-      done: !hasNext,
+      done: false,
       value: item
     }
   }
