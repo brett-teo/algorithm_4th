@@ -29,4 +29,17 @@ class Stack {
       return popItem
     }
   }
+
+  peek() {
+    return this.stack[this.size - 1]
+  }
 }
+
+const s = ['to', 'be']
+const stack = new Stack(100)
+for (let i of s) {
+  stack.push(i)
+}
+console.log(stack.peek())
+stack.push('or')
+console.log(stack.peek())
