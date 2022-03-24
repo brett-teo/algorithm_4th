@@ -45,20 +45,23 @@ class FixedCapStackOfStrings {
 // TEST
 
 const testArr = [
-  'to'
-  // 'be',
-  // 'or',
-  // 'not',
-  // 'to',
-  // '-',
-  // 'be',
-  // '-',
-  // '-',
-  // 'that',
-  // '-',
-  // '-',
-  // '-',
-  // 'is'
+  'it',
+  'was',
+  '-',
+  'the',
+  'best',
+  '-',
+  'of',
+  'times',
+  '-',
+  '-',
+  '-',
+  'it',
+  'was',
+  '-',
+  'the',
+  '-',
+  '-'
 ]
 const run = () => {
   const s = new FixedCapStackOfStrings(1)
